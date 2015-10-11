@@ -21,9 +21,8 @@ par(mar = c(2,4,1,2))
 plot(powerdays$Sub_metering_1, typ='l',ylab = "Energy sub metering",xaxt = "n")
 lines(powerdays$Sub_metering_2,col="red")
 lines(powerdays$Sub_metering_3,col="blue")
-axis(1,at=c(0,1440,2880),labels=c("Thu","Fri","Sat"))
-legend("topright", col = c("black", "red", "blue"), 
-       legend = c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),lty = 1)
+axis(1,at=x_ticks,labels=x_label,legend("topright", col = c("black", "red", "blue"), 
+       legend = c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),lty = 1, cex = .5)
 
 dev.copy(png, file = "plot3.png") ## Copy my plot to a PNG file
 dev.off() ## Don't forget to close the PNG device!
